@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}{{ group.name }}{% endblock %}
+
+{% block content %}
+<h2>{{ group.name }}</h2>
+
+<h3>Members</h3>
+<ul>
+    {% for member in members %}
+        <li>
+            {{ member.name }}
+            <a href="{% url 'member_edit' member.id %}">Edit</a>
+            <a href="{% url 'member_delete' member.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'member_add' group.id %}">+ Add Member</a>
+
+<hr>
+
+<h3>Expenses</h3>
+<ul>
+    {% for expense in expenses %}
+        <li>
+            {{ expense.title }} - ₹{{ expense.amount }}
+            (paid by {{ expense.paid_by.name }})
+            <a href="{% url 'expense_edit' expense.id %}">Edit</a>
+            <a href="{% url 'expense_delete' expense.id %}">Delete</a>
+        </li>
+    {% empty %}
+        <li>No expenses yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'expense_add' group.id %}">+ Add Expense</a>
+
+<hr>
+
+<h3>Balances</h3>
+<ul>
+    {% for member, balance in balances.items %}
+        <li>
+            {{ member.name }} :
+            {% if balance > 0 %}
+                Gets ₹{{ balance }}
+            {% elif balance < 0 %}
+                Owes ₹{{ balance|floatformat:2|slice:"1:" }}
+            {% else %}
+                Settled
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<h3>Settlement Suggestions</h3>
+{% if settlements %}
+<ul>
+    {% for s in settlements %}
+        <li>
+            {{ s.from.name }} pays {{ s.to.name }} ₹{{ s.amount }}
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>All settled 🎉</p>
+{% endif %}
+
+<a href="{% url 'group_list' %}">← Back to Groups</a>
+{% endblock %}

@@ -1,0 +1,256 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(120deg, #f8fafc, #eef2f7);
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+/* =========================
+   LINKS & TEXT
+========================= */
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: #374151;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.main-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+.navbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 16px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar strong {
+    font-size: 1.1rem;
+}
+
+.navbar a {
+    margin-left: 16px;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button,
+.btn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+}
+
+a.btn-secondary {
+    background: #f3f4f6;
+    color: #374151;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+form {
+    margin-top: 15px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   LISTS & CARDS
+========================= */
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 12px 14px;
+    background: #f9fafb;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul li a {
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+/* =========================
+   GROUP CARDS (DASHBOARD)
+========================= */
+
+.group-card {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.25s ease;
+}
+
+.group-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   EXPENSES
+========================= */
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expense-item span {
+    font-size: 0.95rem;
+}
+
+/* =========================
+   BALANCES
+========================= */
+
+.balance-positive {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.balance-negative {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.balance-neutral {
+    color: #6b7280;
+}
+
+/* =========================
+   SETTLEMENT BOX
+========================= */
+
+.settlement-box {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-left: 5px solid #2563eb;
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.settlement-box li {
+    background: transparent;
+    padding: 6px 0;
+}
+
+/* =========================
+   AUTH PAGES
+========================= */
+
+.auth-box {
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   FOOTER (OPTIONAL)
+========================= */
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.85rem;
+    color: #6b7280;
+}

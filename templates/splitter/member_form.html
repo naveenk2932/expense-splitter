@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Member{% endblock %}
+
+{% block content %}
+<h2>{% if member %}Edit Member{% else %}Add Member{% endif %}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text"
+           name="name"
+           value="{{ member.name|default:'' }}"
+           placeholder="Member name"
+           required>
+    <button type="submit">Save</button>
+</form>
+
+{% if member %}
+    <a href="{% url 'group_detail' member.group.id %}">Back</a>
+{% else %}
+    <a href="{% url 'group_detail' group.id %}">Back</a>
+{% endif %}
+
+{% endblock %}
