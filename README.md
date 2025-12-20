@@ -56,7 +56,7 @@ expense_project/
 
 ```bash
 git clone https://github.com/naveenk2932/expense-splitter.git
-cd smart-expense-splitter
+cd expense-splitter
 pip install django
 python manage.py makemigrations
 python manage.py migrate
